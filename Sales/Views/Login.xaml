@@ -8,7 +8,73 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid HorizontalAlignment="Center" Width="936" VerticalAlignment="Stretch">
+        <StackPanel Margin="240,50,240,0">
+            <TextBlock 
+                Text="Login." 
+                TextWrapping="Wrap" 
+                HorizontalAlignment="Center" 
+                FontSize="36" 
+                FontWeight="Bold">
+            </TextBlock>
+            <Image 
+                HorizontalAlignment="Stretch" 
+                Margin="0" 
+                VerticalAlignment="Stretch" 
+                Source="/Assets/loginImage.jpg"
+                Width="200">
+            </Image>
+            <StackPanel Margin="0">
+                <TextBox 
+                    Name="Email" 
+                    Text="{Binding Email, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    InputScope="EmailSmtpAddress" 
+                    PlaceholderText="Email"
+                    >
+                </TextBox>
+                <TextBlock
+                    Foreground="#ffc43131"
+                    Text="{Binding EmailMessage, Mode=TwoWay}"
+                    TextWrapping="Wrap"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch">
+                </TextBlock>
 
+            </StackPanel>
+            <StackPanel Margin="0">
+                <TextBox 
+                    Name="Password" 
+                    Text="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    InputScope="EmailSmtpAddress" 
+                    PlaceholderText="Password">
+                </TextBox>
+                <TextBlock
+                    Foreground="#ffc43131"
+                    Text="{Binding PasswordMessage, Mode=TwoWay}"
+                    TextWrapping="Wrap"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch">
+                </TextBlock>
+            </StackPanel>
+            <Button
+                Content="Iniciar."
+                Command="{Binding IniciarCommand}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            </Button>
+            <TextBlock
+                Text="{Binding Message, Mode=TwoWay}"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Center"
+                Margin="0,25,0,0"
+                VerticalAlignment="Stretch">
+            </TextBlock>
+            <TextBlock Text="@2019 Sales System By Emilio Barrera, London - UK"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       Margin="0,50,0,0"
+                       VerticalAlignment="Stretch">
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
