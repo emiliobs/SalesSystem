@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="Sales.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sales"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Center" Width="936" VerticalAlignment="Stretch">
+        <StackPanel Margin="240,50,240,0">
+            <TextBlock 
+                Text="Login." 
+                TextWrapping="Wrap" 
+                HorizontalAlignment="Center" 
+                FontSize="36" 
+                FontWeight="Bold">
+             </TextBlock>
+            <Image 
+                HorizontalAlignment="Stretch" 
+                Height="100" 
+                Margin="0" 
+                VerticalAlignment="Stretch" 
+                Source="/Assets/loginImage.png">
+            </Image>
+            <StackPanel Margin="0">
+                <TextBox 
+                    Name="Email" 
+                    Text="{Binding Email, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    InputScope="EmailSmtpAddress" 
+                    PlaceholderText="Email">                    
+                </TextBox>
+                <TextBlock
+                    Foreground="#ffc43131"
+                    Text="{Binding EmailMessage, Mode=TwoWay}"
+                    TextWrapping="Wrap"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch">                    
+                </TextBlock>                
+                
+            </StackPanel>
+            <StackPanel Margin="0">
+                <TextBox 
+                    Name="Password" 
+                    Text="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    InputScope="EmailSmtpAddress" 
+                    PlaceholderText="Password">
+                </TextBox>
+                <TextBlock
+                    Foreground="#ffc43131"
+                    Text="{Binding PasswordMessage, Mode=TwoWay}"
+                    TextWrapping="Wrap"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch">
+                </TextBlock> 
+            </StackPanel>
+            <Button
+                Content="Iniciar."
+                Command="{Binding IniciarCommand}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">                
+            </Button>
+            <TextBlock
+                Text="{Binding Message, Mode=TwoWay}"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Center"
+                Margin="0,25,0,0"
+                VerticalAlignment="Stretch">                
+            </TextBlock>
+            <TextBlock Text="@2019 Sales system By Emilio Barrera, London - UK"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       Margin="0,50,0,0"
+                       VerticalAlignment="Stretch">                
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+    
+</Page>
