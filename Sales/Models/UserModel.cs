@@ -60,7 +60,7 @@ namespace Sales.Models
         }
         public string PasswordMessage
         {
-            get => PasswordMessage;
+            get => passwordMessage;
             set
             {
                 if (passwordMessage != value)
@@ -79,7 +79,7 @@ namespace Sales.Models
             {
                 if (message != value)
                 {
-                    password = value;
+                    message = value;
                     NotifyPropertyChanged();
                   
                 }

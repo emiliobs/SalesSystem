@@ -45,7 +45,7 @@
                 <TextBox 
                     Name="Password" 
                     Text="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                    InputScope="EmailSmtpAddress" 
+                    InputScope="Password"  
                     PlaceholderText="Password">
                 </TextBox>
                 <TextBlock
