@@ -1,4 +1,5 @@
-﻿using Sales.Library;
+﻿using Connection;
+using Sales.Library;
 using Sales.Models;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Sales.ViewModels
         private TextBox textBoxPassword;
         private string date = DateTime.Now.ToString("dd/MMM/yyy");
         private Frame rootFrame = Window.Current.Content as Frame;
+        private Connections connection;
 
         public LoginViewModel(object[] campos)
         {
@@ -26,6 +28,8 @@ namespace Sales.ViewModels
 
             this.textBoxEmail = (TextBox)campos[0];
             this.textBoxPassword = (TextBox)campos[1];
+
+            this.connection = new Connections();
         }
 
 
@@ -61,8 +65,17 @@ namespace Sales.ViewModels
             }
 
 
-            var data1 = Email;
-            var data2 = Password; 
+            try
+            {
+                var user = connection.Users.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).ToList();
+
+                var d = user.Count;
+            }
+            catch (Exception ex)
+            {
+
+                var error = ex.Message;
+            }
 
         }
     }
